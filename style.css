@@ -72,3 +72,169 @@
         font: inherit;
     }
 }
+
+@layer base {
+    /* The base styles of the site*/
+    :root {
+        /* -------Primitive variables/ Custom Properties --------- */
+        /*
+        -clr = color
+        -ff = font family
+        -fs = font size
+        */
+
+        /* --Colors-- */
+        --clr-white: hsl(0, 0%, 100%);
+        --clr-black-3: hsl(0, 0%, 40%);
+        --clr-black-4: hsl(0, 0%, 20%);
+        --clr-black-5: hsl(0, 0%, 0%);
+
+        --clr-red-4: hsl(14, 99%, 75%);
+        --clr-red-5: hsl(14, 99%, 50%);
+        --clr-red-6: hsl(14, 99%, 25%);
+
+        /* --Fonts/Typography-- */
+        --ff-heading: "humane", sans-serif;
+        --ff-body: inter, sans-serif;
+        --ff-accent: "Alex Brush", sans-serif;
+
+        /* --Fonts Sizes-- */
+
+        /*For Mobile*/
+        --fs-100: 0.5rem;
+        --fs-200: 0.65rem;
+        --fs-300: 0.75rem;
+        --fs-400: 1rem;
+        --fs-500: 1.25rem;
+        --fs-600: 2rem;
+        --fs-700: 2.5rem;
+        --fs-800: 3rem;
+        --fs-900: 5rem;
+        --fs-1000: 9rem;
+
+        /* For Tablet*/
+        @media (width > 320px) {
+            --fs-100: 0.65rem;
+            --fs-200: 0.75rem;
+            --fs-300: 1rem;
+            --fs-400: 1.5rem;
+            --fs-500: 2rem;
+
+            --fs-1000: 15rem;
+
+            /* For Desktop and larger */
+            @media (width > 745px) {
+                --fs-100: 1rem;
+                --fs-200: 1.5rem;
+                --fs-300: 2rem;
+                --fs-400: 2.5rem;
+                --fs-500: 3rem;
+                --fs-600: 5rem;
+                --fs-700: 6.25rem;
+                --fs-800: 8rem;
+                --fs-900: 11.3rem;
+                --fs-1000: 25rem;
+            }
+        }
+    }
+
+    :root {
+        /* ------Structured Variables------ */
+
+        /* --Colors-- */
+        --text-high-contrast: var(--clr-white);
+        --text-dark-contrast: var(--clr-black-5);
+        --text-brand: var(--clr-red-5);
+        --text-secondary: var(--clr-black-3);
+
+        --background-accent-light: var(--clr-red-4);
+        --background-accent-main: var(--clr-red-5);
+        --background-accent-dark: var(--clr-red-6);
+
+        --background-dark: var(--clr-black-5);
+        --background-light: var(--clr-white);
+
+        /* --Fonts/Typography-- */
+        --font-size-title: var(--fs-1000);
+
+        --font-size-heading-small: var(--fs-600);
+        --font-size-heading-regular: var(--fs-700);
+        --font-size-heading-large: var(--fs-800);
+        --font-size-heading-extra-large: var(--fs-900);
+
+        --font-size-extra-small: var(--fs-100);
+        --font-size--small: var(--fs-200);
+        --font-size-regular: var(--fs-300);
+        --font-size-large: var(--fs-400);
+        --font-size-extra-large: var(--fs-500);
+
+        --font-size-accent-small: var(--fs-600);
+        --font-size-accent-large: var(--fs-800);
+
+        --border-radius-small: 0.25rem;
+        --border-radius-medium: 0.5rem;
+        --border-radius-large: 0.75rem;
+
+        @media (width > 745px) {
+            --font-size-heading-small: var(--fs-400);
+            --font-size-heading-regular: var(--fs-700);
+            --font-size-heading-large: var(--fs-800);
+            --font-size-heading-extra-large: var(--fs-900);
+
+            --font-size-accent-small: var(--fs-500);
+        }
+    }
+
+    html {
+        font-family: var(--ff-body);
+        line-height: 1.6;
+        /* The amount of padding when clicking on link in page*/
+        scroll-padding: 1rem;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        html {
+            /* Makes the scroll experience smooth when click on link. */
+            scroll-behavior: smooth;
+        }
+    }
+
+    body {
+        font-size: var(--font-size-regular);
+        color: var(--text-high-contrast);
+        background-color: var(--background-dark);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-family: var(--ff-heading);
+        color: var(--text-high-contrast);
+    }
+
+    h1 {
+        font-size: var(--font-size-title);
+    }
+
+    a {
+        color: var(--text-high-contrast);
+    }
+
+    a:hover,
+    a:focus-visible {
+        color: var(--text-secondary);
+    }
+}
+
+@layer layout {
+}
+
+@layer components {
+}
+
+@layer animations {
+}
+
+@layer utilities {
+}
