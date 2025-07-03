@@ -113,7 +113,8 @@
     --fs-1000: 9rem;
 
     /* For Tablet*/
-    @media (width > 320px) {
+    /* Was 320px */
+    @media (width > 490px) {
       --fs-100: 0.65rem;
       --fs-200: 0.75rem;
       --fs-300: 1rem;
@@ -123,7 +124,7 @@
       --fs-1000: 15rem;
 
       /* For Desktop and larger */
-      @media (width > 745px) {
+      @media (width > 810px) {
         --fs-100: 1rem;
         --fs-200: 1.5rem;
         --fs-300: 2rem;
@@ -175,7 +176,13 @@
     --border-radius-medium: 0.5rem;
     --border-radius-large: 0.75rem;
 
-    @media (width > 745px) {
+    /* was 745px */
+    @media (width > 810px) {
+      --font-size--small: var(--fs-100);
+      --font-size-regular: var(--fs-200);
+      --font-size-large: var(--fs-300);
+      --font-size-extra-large: var(--fs-400);
+
       --font-size-heading-small: var(--fs-400);
       --font-size-heading-regular: var(--fs-700);
       --font-size-heading-large: var(--fs-800);
@@ -229,11 +236,48 @@
 
 /* Just generic layouts */
 @layer layout {
+  /* Selects all the direct descendants, except the first one */
+  .flow > * + * {
+    margin-block-start: var(--flow-space, 1em); /* 1em for readable flow */
+  }
+
+  .grid-flow {
+    display: grid;
+    gap: var(--grid-flow-gap, 2rem); /* 1rem for consistent flow */
+  }
+
+  .equal-cols {
+    display: grid;
+    gap: var(--equal-col-gap, 1rem);
+    align-items: var(--equal-col-vert-align);
+
+    @media (width > 490px) {
+      grid-auto-flow: column;
+      /* grid-auto-columns: 1fr; */ /* Make cols equal */
+    }
+
+    &[data-gap="large"] {
+      --equal-col-gap: 2rem; /* if need a larger gap */
+    }
+
+    &[data-align="center"] {
+      --equal-col-vert-align: center; /* if need a center alignment for the cols */
+    }
+
+    &[data-direction="reversed"] {
+      @media (width > 490px) {
+        p {
+          order: -1;
+        }
+      }
+    }
+  }
+
   .section {
     --padding: 3rem;
     padding-block: var(--padding); /* Top and bottom spacing of sections */
 
-    @media (width > 7450px) {
+    @media (width > 810px) {
       --padding: 8rem;
     }
   }
@@ -259,6 +303,25 @@
 }
 
 @layer components {
+  .site-header {
+    padding-block: 1rem;
+  }
+
+  .site-header__inner {
+    display: flex;
+    flex-wrap: wrap; /* makes the nav more responsive on smaller screens */
+    gap: 0.5rem 1rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .primary-navigation {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+    }
+  }
 }
 
 @layer animations {
@@ -308,7 +371,6 @@
   .fs-title {
     font-size: var(--font-size-title);
   }
-
   /* Heading font size */
   .fs-heading-small {
     font-size: var(--font-size-heading-small);
@@ -316,14 +378,15 @@
   .fs-heading-regular {
     font-size: var(--font-size-heading-regular);
   }
-  .fs-heading-large {
-    font-size: var(--font-size-heading-large);
+  .fs-heading-extra-large {
+    font-size: var(--font-size-heading-extra-large);
   }
   .section-title {
-    font-size: var(--font-size-heading-extra-large);
+    font-size: var(--font-size-heading-large);
   }
 
   /* Body font size */
+  /*
   .fs-extra-small {
     font-size: var(--font-size-extra-small);
   }
@@ -339,17 +402,23 @@
   .fs-extra-large {
     font-size: var(--font-size-extra-large);
   }
+    */
 
   /* Accent font size */
+  /*
   .fs-accent-small {
     font-size: var(--font-size-accent-small);
   }
   .fs-accent-large {
     font-size: var(--font-size-accent-large);
   }
+  */
+
+  .spot * {
+    border: 1px solid blue;
+  }
 }
 
 /*
-Continue to add the utility classes to the appropriate elements!
-Watch Powells video about intresnic layout for mobile design.
+Watch Powells video about component styling - the hero
 */
