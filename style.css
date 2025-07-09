@@ -505,11 +505,34 @@
 
     .accordion {
       padding: 0.4rem;
-      border-bottom: 1px solid grey;
+      border-bottom: 1px solid var(--clr-black-3);
     }
 
     .accordion__title {
-      display: inline-flex;
+      /* display: block; */
+      /* background-color: aqua; */
+      text-wrap: no-wrap;
+
+      span {
+        display: inline-block;
+        /* background-color: aquamarine; */
+        /* margin-inline-end: -0.5rem; */
+      }
+    }
+
+    .accordion__content {
+      font-size: var(--font-size-regular);
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 300ms;
+
+      &[aria-hidden="false"] {
+        grid-template-rows: 1fr;
+      }
+
+      div {
+        overflow: hidden;
+      }
     }
   }
 }
