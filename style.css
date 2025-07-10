@@ -14,6 +14,13 @@
     text-size-adjust: none;
   }
 
+  @font-face {
+    font-family: "humane";
+    font-weight: 400;
+    src: url(/assets/fonts/Humane-Bold.woff2) format("woff2"),
+      url(/assets/fonts/Humane-Bold.woff) format("woff");
+  }
+
   body,
   h1,
   h2,
