@@ -607,6 +607,42 @@
       }
     }
   }
+
+  .infiniteScroll {
+    --scroll-gap: 2rem;
+
+    padding-block: 0.5rem;
+    border-block: 1px solid;
+
+    display: flex;
+    gap: var(--scroll-gap);
+    justify-content: space-between;
+    overflow: hidden;
+    user-select: none;
+
+    .infiniteScroll__sections {
+      min-width: 100%;
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      align-items: center;
+      flex-shrink: 0;
+
+      animation: scroll 10s linear infinite;
+
+      div {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+    }
+  }
+
+  @keyframes scroll {
+    to {
+      transform: translateX(calc(-100% - var(--scroll-gap)));
+    }
+  }
 }
 
 @layer animations {
