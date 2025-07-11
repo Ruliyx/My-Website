@@ -16,9 +16,9 @@
 
   @font-face {
     font-family: "humane";
-    font-weight: 400;
-    src: url(/assets/fonts/Humane-Bold.woff2) format("woff2"),
-      url(/assets/fonts/Humane-Bold.woff) format("woff");
+    font-weight: 700;
+    src: url(/assets/fonts/Humane-SemiBold.woff2) format("woff2"),
+      url(/assets/fonts/Humane-SemiBold.woff) format("woff");
   }
 
   body,
