@@ -15,10 +15,10 @@
   }
 
   @font-face {
-    font-family: "humane";
+    font-family: "High Empathy";
     font-weight: 600;
-    src: url(/assets/fonts/Humane-SemiBold.woff2) format("woff2"),
-      url(/assets/fonts/Humane-SemiBold.woff) format("woff");
+    src: url(/assets/fonts/high_empathy-webfont.woff2) format("woff2"),
+      url(/assets/fonts/high_empathy-webfont.woff) format("woff");
   }
 
   @font-face {
@@ -26,6 +26,12 @@
     font-weight: 700;
     src: url(/assets/fonts/Humane-Bold.woff2) format("woff2"),
       url(/assets/fonts/Humane-Bold.woff) format("woff");
+  }
+
+  @font-face {
+    font-family: "inter";
+    font-weight: 500;
+    src: url(/assets/fonts/Inter-Medium.woff2) format("woff2");
   }
 
   body,
@@ -171,7 +177,7 @@
     --background-accent-main: var(--clr-red-5);
     --background-accent-dark: var(--clr-red-6);
 
-    --background-dark: var(--clr-black-5);
+    --background-dark: var(--clr-black-4);
     --background-light: var(--clr-white);
 
     /* --Fonts/Typography-- */
@@ -336,7 +342,7 @@
   }
 
   .wrapper {
-    --wrapper-max-width: 1280px;
+    --wrapper-max-width: min(100vw, 1530px);
     --wrapper-inline-padding: 1rem;
 
     max-width: var(--wrapper-max-width); /* Large screen */
@@ -356,7 +362,7 @@
 
     &[data-padding="large"] {
       @media (width > 830px) {
-        --wrapper-inline-padding: 4rem;
+        --wrapper-inline-padding: 2rem;
       }
     }
   }
@@ -421,22 +427,38 @@
 
   .hero {
     height: 100svh;
+    padding-top: 20vw;
     display: flex;
     align-items: center;
     text-align: center;
 
-    span {
-      display: block;
-      padding-block-start: 5rem;
-      margin-block-end: 2rem;
+    .hero__content {
+      position: relative;
+    }
+
+    .hero__intro {
+      /* display: block; */
+      position: absolute;
+      top: -20%;
+      left: 0;
+      font-family: "High Empathy";
+      font-size: clamp(2rem, 1rem + 5vw, 7rem);
+      font-weight: 800;
+      -webkit-text-stroke: 2px;
     }
 
     .hero__title {
-      font-size: var(--font-size-title);
-      color: var(--text-dark-contrast);
-      text-transform: uppercase;
-      line-height: 0.8;
-      font-weight: 700;
+      width: 100vw;
+      min-width: 280px;
+
+      padding-block-end: clamp(1.5rem, 2vw + 0.2rem, 4rem);
+    }
+
+    .hero__phrase {
+      text-align: left;
+      font-size: 1.25rem;
+      font-weight: 500;
+      line-height: 1.2;
     }
   }
 
