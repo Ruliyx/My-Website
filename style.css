@@ -121,7 +121,7 @@
     /* --Fonts Sizes-- */
 
     /*For Mobile*/
-    --fs-100: 0.5rem;
+    /* --fs-100: 0.5rem;
     --fs-200: 0.65rem;
     --fs-300: 0.75rem;
     --fs-400: 1rem;
@@ -129,24 +129,34 @@
     --fs-600: 2rem;
     --fs-700: 2.5rem;
     --fs-800: 3rem;
-    /* --fs-800: clamp(2.25rem, 2.5vw + 0.5rem, 3rem); */
     --fs-900: 5rem;
-    --fs-1000: 9rem;
+    --fs-1000: 9rem; */
+
+    --fs-100: clamp(0.625rem, 0.5vw + 0.5rem, 0.75rem);
+    --fs-200: clamp(0.75rem, 0.7vw + 0.5rem, 0.875rem);
+    --fs-300: clamp(0.875rem, 0.9vw + 0.5rem, 1rem);
+    --fs-400: clamp(1rem, 1vw + 0.5rem, 1.125rem);
+    --fs-500: clamp(1.125rem, 1.2vw + 0.5rem, 1.25rem);
+    --fs-600: clamp(1.25rem, 1.4vw + 0.5rem, 1.5rem);
+    --fs-700: clamp(1.5rem, 1.6vw + 0.5rem, 1.875rem);
+    --fs-800: clamp(1.875rem, 2vw + 0.5rem, 2.25rem);
+    --fs-900: clamp(2.25rem, 2.5vw + 0.5rem, 3rem);
+    --fs-1000: clamp(3rem, 4vw + 0.5rem, 4rem);
 
     /* For Tablet*/
     /* Was 320px */
     @media (width > 490px) {
-      --fs-100: 0.65rem;
+      /* --fs-100: 0.65rem;
       --fs-200: 0.75rem;
       --fs-300: 1rem;
       --fs-400: 1.5rem;
       --fs-500: 2rem;
 
-      --fs-1000: 15rem;
+      --fs-1000: 15rem; */
 
       /* For Desktop and larger */
       @media (width > 830px) {
-        --fs-100: 1rem;
+        /* --fs-100: 1rem;
         --fs-200: 1.5rem;
         --fs-300: 2rem;
         --fs-400: 2.5rem;
@@ -155,10 +165,10 @@
         --fs-700: 6.25rem;
         --fs-800: 8rem;
         --fs-900: 10rem;
-        --fs-1000: 18rem;
+        --fs-1000: 18rem; */
 
         @media (width > 1200px) {
-          --fs-1000: 25rem;
+          /* --fs-1000: 25rem; */
         }
       }
     }
@@ -203,7 +213,7 @@
 
     /* was 745px */
     @media (width > 830px) {
-      --font-size--small: var(--fs-100);
+      /* --font-size--small: var(--fs-100);
       --font-size-regular: var(--fs-200);
       --font-size-large: var(--fs-300);
       --font-size-extra-large: var(--fs-400);
@@ -213,7 +223,7 @@
       --font-size-heading-large: var(--fs-800);
       --font-size-heading-extra-large: var(--fs-900);
 
-      --font-size-accent-small: var(--fs-500);
+      --font-size-accent-small: var(--fs-500); */
     }
   }
 
@@ -396,6 +406,16 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem 1rem;
+      text-transform: uppercase;
+    }
+
+    a:link,
+    a:hover,
+    a:active,
+    a:visited {
+      text-decoration: none;
+      color: white;
+      /* font-size: 2rem; */
     }
   }
 
@@ -427,7 +447,7 @@
 
   .hero {
     height: 100svh;
-    padding-top: 20vw;
+    padding-top: 18vw;
     display: flex;
     align-items: center;
     text-align: center;
