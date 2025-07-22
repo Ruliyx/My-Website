@@ -14,10 +14,12 @@
           <span>Logo</span>
           <nav class="primary-navigation">
             <ul role="list">
-              <li class="nav-links flip"><a href="#">Projects</a></li>
-              <li class="nav-links flip"><a href="#">About</a></li>
-              <li class="nav-links flip"><a href="#">Testimonials</a></li>
-              <li class="nav-links flip"><a href="#">Contact</a></li>
+              <li class="flip"><a href="#projects">Projects</a></li>
+              <li class="flip"><a href="#about">About</a></li>
+              <li class="flip"><a href="#testimonials">Testimonials</a></li>
+              <li class="flip">
+                <a class="contact" href="#contact">Contact</a>
+              </li>
             </ul>
           </nav>
         </div>
@@ -34,38 +36,34 @@
           <div class="hero__content">
             <span class="hero__intro">Hi,Im Rulin a</span>
             <div class="hero__title">
-              <img src="/assets/FrontEnd.svg" alt="" />
-              <img src="/assets/Developer.svg" alt="" />
+              <img src="/assets/FrontEnd.svg" alt="Front-End" />
+              <img src="/assets/Developer.svg" alt="Developer" />
             </div>
             <!-- <img class="hero__title" src="/assets/Front-End Dev.svg" alt="" /> -->
           </div>
-          <p class="hero__phrase">
-            Creating websites that work as hard as
-            <br />
-            you do.
-          </p>
-          <br />
-          <a class="button" href="#">Let's Get in touch</a>
+          <div class="hero__end">
+            <p class="hero__phrase">
+              Creating websites that work as hard as you do.
+            </p>
+            <a href="#projects">
+              Have a look at my works
+              <span>&#8595;</span>
+            </a>
+          </div>
         </div>
       </section>
 
       <!---->
       <!-- Projects Section  -->
       <!---->
-      <section class="section projects">
+      <section class="section projects" id="projects">
         <div class="wrapper flow">
-          <div
-            class="projects__header equal-cols"
-            data-align="center"
-            data-direction="normal"
-          >
-            <h2 class="section-title">Projects</h2>
+          <div class="projects__header">
             <p>
-              Here is some of my work—proof that great
-              <span class="tc-brand">design</span>
-              <br />
+              Here is some of the work, proof that great
+              <span>design</span>
               and technical rigor can coexist to drive
-              <span class="tc-brand">results</span>
+              <span>results</span>
             </p>
           </div>
 
@@ -153,7 +151,7 @@
       <!---->
       <!-- About Section  -->
       <!---->
-      <section class="section about flow">
+      <section class="section about flow" id="about">
         <div class="wrapper">
           <div
             class="about__header equal-cols"
@@ -244,7 +242,7 @@
       <!---->
       <!-- Testimonial Section  -->
       <!---->
-      <section class="section testimonials">
+      <section class="section testimonials" id="testimonials">
         <div class="wrapper">
           <div class="testimonials__header equal-cols" data-align="center">
             <h2 class="section-title">Testimonials</h2>
@@ -337,7 +335,7 @@
       <!---->
       <!-- Contact Section  -->
       <!---->
-      <section class="section contact">
+      <section class="section contact" id="contact">
         <div class="wrapper">
           <div class="connect__banner">
             <p class="connect__banner_header">
