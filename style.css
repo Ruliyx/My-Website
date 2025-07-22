@@ -403,9 +403,12 @@
 
     .contact {
       background-color: var(--bg-accent-main);
-      padding: 0.5rem 0.8rem;
       border-radius: var(--border-radius-s);
       transition: background-color 0.2s ease-in-out;
+      cursor: pointer;
+      a {
+        padding: 0.5rem 0.8rem;
+      }
     }
 
     .contact:hover {
