@@ -326,11 +326,11 @@
   }
 
   .section {
-    --padding-b: 3rem;
+    --padding-b: 5rem;
     padding-block: var(--padding-b); /* Top and bottom spacing of sections */
 
     @media (width > 830px) {
-      --padding-b: 5rem;
+      --padding-b: 10rem;
     }
   }
 
