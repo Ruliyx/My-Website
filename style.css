@@ -160,7 +160,9 @@
     --tc-dark-contrast3: var(--clr-black-3);
 
     --tc-accent: var(--clr-red-5);
+    --bg-accent-light: var(--clr-red-4);
     --bg-accent-main: var(--clr-red-5);
+    --bg-accent-dark: var(--clr-red-6);
 
     --bg-light1: var(--clr-white-1);
     --bg-light2: var(--clr-white-2);
@@ -362,8 +364,9 @@
     ul {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem 1rem;
+      gap: 0.5rem 2rem;
       text-transform: uppercase;
+      font-size: var(--fs-small);
     }
 
     a:link,
@@ -725,6 +728,35 @@
   @keyframes scroll {
     to {
       transform: translateX(calc(-100% - var(--scroll-gap)));
+    }
+  }
+
+  .flip {
+    --transition-duration: 0.325s;
+    --timing-function: cubic-bezier(0.66, 0, 0.34, 1);
+    overflow-y: clip;
+
+    > * {
+      /* inline elements can't use transforms */
+      display: block;
+
+      /* the transform is moving it up then the translate has a  */
+      transition: transform var(--transition-duration) var(--timing-function),
+        translate 0ms calc(var(--transition-duration) / 2);
+    }
+
+    &:is(:hover, :focus-within) > * {
+      transform: translateY(-2lh);
+      translate: 0 2lh;
+    }
+
+    &:focus-within {
+      outline: 2px solid var(--teal);
+      border-radius: 4px;
+
+      > *:focus {
+        outline: none;
+      }
     }
   }
 }
