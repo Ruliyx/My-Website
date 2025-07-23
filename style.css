@@ -124,7 +124,7 @@
     --clr-red-6: hsl(14, 99%, 25%);
 
     /* --Fonts/Typography-- */
-    --ff-heading: "humane", sans-serif;
+    --ff-heading: "boldonse", sans-serif;
     --ff-body: inter, sans-serif;
     --ff-accent: "Alex Brush", sans-serif;
 
@@ -285,7 +285,9 @@
     font-family: "boldonse";
     font-size: var(--fs-heading-large);
     max-width: 800px;
-    line-height: 1.5;
+    line-height: 1.7;
+    margin-inline: auto;
+    text-align: center;
 
     p > span {
       font-family: "high empathy";
@@ -294,6 +296,34 @@
       padding-inline: 0.8rem;
       line-height: 0.5;
       font-weight: 800;
+    }
+  }
+
+  .section-title {
+    position: relative;
+    font-size: var(--fs-heading-extra-large);
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    & span {
+      /* position: absolute; */
+      font-size: clamp(3rem, 5vw + 0.5rem, 6rem);
+      font-family: "high empathy";
+      bottom: -35%;
+      color: var(--tc-accent);
+      font-weight: 900;
+    }
+
+    @media (width < 840px) {
+      flex-direction: column;
+      align-items: baseline;
+      gap: 0;
+
+      & span {
+        /* font-size: 3rem; */
+        line-height: 1;
+      }
     }
   }
 
@@ -341,11 +371,11 @@
   }
 
   .section {
-    --padding-b: 5rem;
+    --padding-b: 3rem;
     padding-block: var(--padding-b); /* Top and bottom spacing of sections */
 
     @media (width > 830px) {
-      --padding-b: 10rem;
+      --padding-b: 5rem;
     }
   }
 
@@ -421,8 +451,13 @@
       border-radius: var(--border-radius-s);
       transition: background-color 0.2s ease-in-out;
       cursor: pointer;
+
       a {
         padding: 0.5rem 0.8rem;
+
+        @media (width < 830px) {
+          display: block;
+        }
       }
     }
 
@@ -558,104 +593,10 @@
     }
   }
 
-  /* .card {
-    display: grid;
-    gap: var(--card-col-gap, 1rem);
-
-    .card-preview video {
-      width: 100%;
-      object-fit: fill;
-      aspect-ratio: 5/3;
-    }
-
-    .card-info h3 {
-      font-size: var(--fs-heading-extra-large);
-    }
-
-    .card-tags {
-      margin-block: 1rem;
-      display: flex;
-      gap: 1rem;
-
-      .card-tag {
-        background-color: var(--bg-accent-main);
-        padding: 0.5rem;
-        font-size: var(--fs--small);
-      }
-    }
-
-    .card__description {
-      font-size: var(--fs-regular);
-    }
-
-    .card__year {
-      font-size: var(--fs-large);
-      align-self: flex-end;
-    }
-
-    @media (width > 830px) {
-      --card-col-gap: 2rem;
-
-      height: 70%;
-
-      .card-preview {
-        background-color: var(--bg-accent-main);
-        display: grid;
-        justify-content: center;
-        align-items: center;
-        padding: 3rem;
-        border-radius: 15px;
-      }
-      .card-preview video {
-        max-width: 780px;
-      }
-
-      .card__description {
-        font-size: var(--fs--small);
-      }
-
-      .card-tag {
-        font-size: var(--fs--small);
-      }
-    }
-
-    @media (width > 1200px) {
-      grid-auto-flow: column;
-      grid-auto-columns: 5fr 3fr;
-
-      .card-info {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-      }
-
-      .card__year {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-      }
-
-      &[data-direction="reversed"] {
-        grid-auto-columns: 3fr 5fr;
-
-        .card-preview {
-          order: 2;
-        }
-
-        .card__year {
-          position: absolute;
-          left: 0;
-          bottom: 0;
-        }
-      }
-    }
-  } */
-
   .card {
     color: var(--clr-white-2);
     display: grid;
     gap: var(--card-col-gap, 1rem);
-    /* background-color: var(--bg-dark2); */
     border: 1px solid var(--bg-dark3);
     padding: 1rem;
     border-radius: var(--border-radius-m);
@@ -668,8 +609,7 @@
     }
 
     .card__title {
-      /* background-color: aqua; */
-      padding-block-start: 0.5rem;
+      padding-block-start: 0.6rem;
       vertical-align: bottom;
     }
 
@@ -728,7 +668,7 @@
     }
   }
 
-  .accordions {
+  /* .accordions {
     font-size: var(--fs-large);
     margin-block-end: 5rem;
 
@@ -753,6 +693,35 @@
 
       div {
         overflow: hidden;
+      }
+    }
+  } */
+
+  .about__cards {
+    .about__card {
+      padding-block: 2rem 1.6rem;
+      border-block: 1px solid var(--bg-dark2);
+      display: flex;
+      gap: var(--space-sm);
+      justify-content: space-between;
+
+      & h3 {
+        font-weight: 300;
+        font-size: var(--fs-heading-regular);
+        margin-block-end: var(--space-sm);
+      }
+
+      & p {
+        color: var(--tc-high-contrast2);
+        line-height: 1.2em;
+        font-size: var(--fs-regular);
+      }
+
+      span {
+        font-family: var(--ff-heading);
+        font-size: var(--fs-large);
+        color: var(--tc-high-contrast2);
+        align-self: flex-end;
       }
     }
   }
@@ -909,30 +878,32 @@
   }
 
   .flip {
-    --transition-duration: 0.25s;
-    --timing-function: cubic-bezier(0.66, 0, 0.34, 1);
-    overflow-y: clip;
+    @media (width > 830px) {
+      --transition-duration: 0.25s;
+      --timing-function: cubic-bezier(0.66, 0, 0.34, 1);
+      overflow-y: clip;
 
-    > * {
-      /* inline elements can't use transforms */
-      display: block;
+      > * {
+        /* inline elements can't use transforms */
+        display: block;
 
-      /* the transform is moving it up then the translate has a  */
-      transition: transform var(--transition-duration) var(--timing-function),
-        translate 0ms calc(var(--transition-duration) / 2);
-    }
+        /* the transform is moving it up then the translate has a  */
+        transition: transform var(--transition-duration) var(--timing-function),
+          translate 0ms calc(var(--transition-duration) / 2);
+      }
 
-    &:is(:hover, :focus-within) > * {
-      transform: translateY(-2lh);
-      translate: 0 2lh;
-    }
+      &:is(:hover, :focus-within) > * {
+        transform: translateY(-2lh);
+        translate: 0 2lh;
+      }
 
-    &:focus-within {
-      outline: 2px solid var(--bg-accent-main);
-      border-radius: 4px;
+      &:focus-within {
+        outline: 2px solid var(--bg-accent-main);
+        border-radius: 4px;
 
-      > *:focus {
-        outline: none;
+        > *:focus {
+          outline: none;
+        }
       }
     }
   }
@@ -1016,9 +987,6 @@
   }
   .fs-heading-extra-large {
     font-size: var(--fs-heading-extra-large);
-  }
-  .section-title {
-    font-size: var(--font-size-heading-large);
   }
 
   /* Body font size */
