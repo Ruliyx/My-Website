@@ -629,6 +629,7 @@
     .card-tags {
       /* background-color: green; */
       .card-tag {
+        display: inline;
         font-size: var(--fs-small);
         color: var(--tc-accent);
         text-transform: uppercase;

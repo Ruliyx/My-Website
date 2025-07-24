@@ -56,7 +56,11 @@
       <!---->
       <!-- Projects Section  -->
       <!---->
-      <section class="section projects" id="projects">
+      <section
+        class="section projects"
+        id="projects"
+        aria-labelledby="section-heading"
+      >
         <div class="wrapper flow">
           <div class="projects__header">
             <p>
@@ -68,14 +72,14 @@
           </div>
 
           <div class="section-title ls-xl">
-            <h2>Projects</h2>
+            <h2 id="section-heading">Projects</h2>
             <span>(my lovly works)</span>
           </div>
 
           <div class="projects__cards grid-flow ls-m">
             <!-- -->
             <!--Project card 1-->
-            <div class="card" data-direction="normal">
+            <article class="card" data-direction="normal">
               <div class="card__title">
                 <h3>This Website</h3>
               </div>
@@ -83,21 +87,21 @@
                 <video src="/assets/site.mp4" autoplay loop></video>
               </div>
               <div class="card-info">
-                <div class="card-tags">
-                  <span class="card-tag">Web Development</span>
-                  <span class="card-tag">Web Design</span>
-                  <span class="card-tag">UI</span>
-                </div>
+                <ul class="card-tags" role="list">
+                  <li class="card-tag">Web Development</li>
+                  <li class="card-tag">Web Design</li>
+                  <li class="card-tag">UI</li>
+                </ul>
                 <p class="card__description">
                   Photography site that captures the wild heart of people, one
                   frame at a time
                 </p>
                 <span class="card__year">2024</span>
               </div>
-            </div>
+            </article>
 
             <!--Project card 2-->
-            <div class="card" data-direction="reversed">
+            <article class="card" data-direction="reversed">
               <div class="card__title">
                 <h3>This Website</h3>
               </div>
@@ -105,20 +109,21 @@
                 <video src="/assets/site.mp4" autoplay loop></video>
               </div>
               <div class="card-info">
-                <div class="card-tags">
-                  <span class="card-tag">Web Development</span>
-                  <span class="card-tag">Web Design</span>
-                </div>
+                <ul class="card-tags" role="list">
+                  <li class="card-tag">Web Development</li>
+                  <li class="card-tag">Web Design</li>
+                  <li class="card-tag">UI</li>
+                </ul>
                 <p class="card__description">
                   Photography site that captures the wild heart of people, one
                   frame at a time
                 </p>
                 <span class="card__year">2024</span>
               </div>
-            </div>
+            </article>
 
             <!--Project card 3-->
-            <div class="card" data-direction="normal">
+            <article class="card" data-direction="normal">
               <div class="card__title">
                 <h3>This Website</h3>
               </div>
@@ -126,20 +131,21 @@
                 <video src="/assets/site.mp4" autoplay loop></video>
               </div>
               <div class="card-info">
-                <div class="card-tags">
-                  <span class="card-tag">Web Development</span>
-                  <span class="card-tag">Web Design</span>
-                </div>
+                <ul class="card-tags" role="list">
+                  <li class="card-tag">Web Development</li>
+                  <li class="card-tag">Web Design</li>
+                  <li class="card-tag">UI</li>
+                </ul>
                 <p class="card__description">
                   Photography site that captures the wild heart of people, one
                   frame at a time
                 </p>
                 <span class="card__year">2024</span>
               </div>
-            </div>
+            </article>
 
             <!--Project card 4-->
-            <div class="card" data-direction="reversed">
+            <article class="card" data-direction="reversed">
               <div class="card__title">
                 <h3>This Website</h3>
               </div>
@@ -147,17 +153,18 @@
                 <video src="/assets/site.mp4" autoplay loop></video>
               </div>
               <div class="card-info">
-                <div class="card-tags">
-                  <span class="card-tag">Web Development</span>
-                  <span class="card-tag">Web Design</span>
-                </div>
+                <ul class="card-tags" role="list">
+                  <li class="card-tag">Web Development</li>
+                  <li class="card-tag">Web Design</li>
+                  <li class="card-tag">UI</li>
+                </ul>
                 <p class="card__description">
                   Photography site that captures the wild heart of people, one
                   frame at a time
                 </p>
                 <span class="card__year">2024</span>
               </div>
-            </div>
+            </article>
           </div>
         </div>
       </section>
@@ -165,16 +172,20 @@
       <!---->
       <!-- About Section  -->
       <!---->
-      <section class="section about" id="about">
+      <section
+        class="section about"
+        id="about"
+        aria-labelledby="section-heading"
+      >
         <div class="wrapper">
           <div class="section-title">
-            <h2>About</h2>
+            <h2 id="section-heading">About</h2>
             <span>(im more than a developer)</span>
           </div>
         </div>
 
         <div class="about__cards wrapper ls-m" data-width="wide">
-          <div class="about__card flip">
+          <article class="about__card flip">
             <div class="about__card-info">
               <h3>Responsive Design</h3>
               <p>
@@ -183,9 +194,9 @@
               </p>
             </div>
             <span>01</span>
-          </div>
+          </article>
 
-          <div class="about__card flip">
+          <article class="about__card flip">
             <div>
               <h3>User-Focused Approach</h3>
               <p>
@@ -194,9 +205,9 @@
               </p>
             </div>
             <span>02</span>
-          </div>
+          </article>
 
-          <div class="about__card flip">
+          <article class="about__card flip">
             <div>
               <h3>Lifelong Learning</h3>
               <p>
@@ -205,9 +216,9 @@
               </p>
             </div>
             <span>03</span>
-          </div>
+          </article>
 
-          <div class="about__card flip">
+          <article class="about__card flip">
             <div>
               <h3>Iterative Improvement</h3>
               <p>
@@ -216,9 +227,9 @@
               </p>
             </div>
             <span>04</span>
-          </div>
+          </article>
 
-          <div class="about__card flip">
+          <article class="about__card flip">
             <div>
               <h3>Nimble Adaption</h3>
               <p>
@@ -227,53 +238,7 @@
               </p>
             </div>
             <span>05</span>
-          </div>
-
-          <!-- <div class="accordion">
-            <div class="accordion__title">Responsive Design</div>
-            <div class="accordion__content" aria-hidden="true">
-              <div>
-                Ensure websites adapt seamlessly to all devices and screen
-                sizes.
-              </div>
-            </div>
-          </div>
-          <div class="accordion">
-            <p class="accordion__title">User-Focused Approach</p>
-            <div class="accordion__content" aria-hidden="true">
-              <div>
-                Prioritize usability, accessibility, and intuitive navigation
-                for the end user.
-              </div>
-            </div>
-          </div>
-          <div class="accordion">
-            <p class="accordion__title">Lifelong Learning</p>
-            <div class="accordion__content" aria-hidden="true">
-              <div>
-                Stay updated with evolving technologies, frameworks, and
-                industry standards.
-              </div>
-            </div>
-          </div>
-          <div class="accordion">
-            <p class="accordion__title">Iterative Improvement</p>
-            <div class="accordion__content" aria-hidden="true">
-              <div>
-                Continuously test, refine, and optimize code and user
-                experiences.
-              </div>
-            </div>
-          </div>
-          <div class="accordion">
-            <p class="accordion__title">Nimble Adaption</p>
-            <div class="accordion__content" aria-hidden="true">
-              <div>
-                Quickly adapt to new tools, trends, and client needs while
-                maintaining clean, scalable code.
-              </div>
-            </div>
-          </div> -->
+          </article>
         </div>
 
         <div class="wrapper flow ls-l">
@@ -304,10 +269,14 @@
       <!---->
       <!-- Testimonial Section  -->
       <!---->
-      <section class="section testimonials" id="testimonials">
+      <section
+        class="section testimonials"
+        id="testimonials"
+        aria-labelledby="section-heading"
+      >
         <div class="wrapper">
           <div class="testimonials__header equal-cols" data-align="center">
-            <h2 class="section-title">Testimonials</h2>
+            <h2 class="section-title" id="section-heading">Testimonials</h2>
             <p>
               Still not sold? Hear from
               <span class="tc-brand">others!</span>
@@ -397,7 +366,11 @@
       <!---->
       <!-- Contact Section  -->
       <!---->
-      <section class="section contact" id="contact">
+      <section
+        class="section contact"
+        id="contact"
+        aria-labelledby="section-heading"
+      >
         <div class="wrapper">
           <div class="connect__banner">
             <p class="connect__banner_header">
