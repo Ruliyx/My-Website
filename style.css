@@ -270,19 +270,14 @@
 
     transform: translate3d(0, 0, 0); /* For Safari browser*/
   }
-  /* .noise {
-    position: absolute;
-    z-index: -100;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3C!-- svg: first layer --%3E%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='10' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  } */
 
   .section {
     background-color: rgba(0, 0, 0, 0.8);
   }
 
   .projects__header {
-    height: 100svh;
+    height: 70svh;
+    margin-block-end: 15vh;
     font-family: "boldonse";
     font-size: var(--fs-heading-large);
     line-height: 1.7;
@@ -597,7 +592,7 @@
     gap: 30svh;
 
     @media (width > 1200px) {
-      gap: 100svh;
+      gap: 50svh;
     }
   }
 
@@ -949,6 +944,29 @@
         scale: 1 1;
       }
     }
+
+    .card {
+      animation: fade-out linear forwards;
+      animation-timeline: view();
+      animation-range: contain;
+
+      &:nth-child(3) {
+        animation-range: contain 30% exit;
+      }
+
+      &:last-child {
+        animation-range: exit 30%;
+      }
+    }
+    @keyframes fade-out {
+      40% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0;
+        scale: 70%;
+      }
+    }
   }
 }
 
@@ -1064,20 +1082,3 @@
     border: 1px solid blue;
   }
 }
-
-/*
-Watch Powells video about component styling - the hero
-*/
-
-/*
-Design a single page modern website with the colors white, black and "#fe3c01".
-Make sure its responsive. I want the header at the top with the logo on the left
-and the navigation on the right. the navigation contains the Projects, About, Testimonials and Contact links.
-under the header i want the banner. It should have huge bold text that says "WEB DEVELOPER" and a call to action below.
-The banner and header section should have the background color of "#fe3c01" as well as the footer.
-The main content is the Projects, About and Testimonials sections (the Contact section is in the footer).
-In the Projects section i want to see at least 3 cards that has a image, heading and short description. 
-Make sure the cards are more modern looking and make use of white space and visually appeasing  positioning.
-You can generate the other sections yourself with dummy text, i want it to look trendy and elegant. Make use of any modern techniques
-to style the webpage, such as borders, backgrounds with gradients in some parts etc.
-*/
