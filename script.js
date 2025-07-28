@@ -1,30 +1,22 @@
-// **** Accordion
-const accordionItems = document.querySelectorAll(".accordion");
+/* Intersection Observer */
+const observer = new IntersectionObserver(
+  (entries) => {
+    /* This callback runs every-time an observer element enter/leaves the viewport */
 
-accordionItems.forEach((item) => {
-  const accordionTitle = item.querySelector(".accordion__title");
+    entries.forEach((entry) => {
+      /* To check if an entry is currently intersecting/visible */
+      // if (entry.isIntersecting) {
+      //   console.log(entry);
+      //   entry.target.classList.add("fade");
+      // } else {
+      //   entry.target.classList.remove("fade");
+      // }
+    });
+  },
+  { threshold: 0.5 }
+);
 
-  accordionTitle.addEventListener("click", () => {
-    if (
-      item.querySelector(".accordion__content").getAttribute("aria-hidden") ==
-      "false"
-    ) {
-      item
-        .querySelector(".accordion__content")
-        .setAttribute("aria-hidden", "true");
-    } else {
-      // Close all accordions
-      accordionItems.forEach((i) => {
-        i.querySelector(".accordion__content").setAttribute(
-          "aria-hidden",
-          "true"
-        );
-      });
-
-      // Open current accordion
-      item
-        .querySelector(".accordion__content")
-        .setAttribute("aria-hidden", "false");
-    }
-  });
-});
+/* For the observer to observe the .card class */
+const cardElements = document.querySelectorAll(".card");
+// cardElements.forEach((el) => observer.observe(el));
+observer.observe(cardElements[0]);

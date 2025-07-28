@@ -946,19 +946,22 @@
       }
     }
 
-    .card {
-      animation: fade-out linear forwards;
-      animation-timeline: view();
-      animation-range: contain;
+    @supports (animation-timeline: view()) {
+      .card {
+        animation: fade-out linear forwards;
+        animation-timeline: view();
+        animation-range: contain;
 
-      &:nth-child(3) {
-        animation-range: contain 30% exit;
-      }
+        &:nth-child(3) {
+          animation-range: contain 30% exit;
+        }
 
-      &:last-child {
-        animation-range: exit 30%;
+        &:last-child {
+          animation-range: exit 30%;
+        }
       }
     }
+
     @keyframes fade-out {
       40% {
         opacity: 0;
