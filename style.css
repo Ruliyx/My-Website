@@ -161,6 +161,7 @@
     --ls-m: 5rem;
     --ls-l: 8rem;
     --ls-xl: 10rem;
+    --ls-xxl: 15rem;
 
     @media (width < 840px) {
       --ls-xs: 1rem;
@@ -742,22 +743,97 @@
 
   .about__details {
     --about-grid-direction: row;
+    padding-block-start: 5rem;
 
     display: grid;
     grid-auto-flow: var(--about-grid-direction);
+    gap: 1rem;
 
     .about__details-title {
-      font-size: var(--fs-heading-regular);
+      font-size: var(--fs-heading-small);
+    }
+
+    .about__details-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      .about__details-title {
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        gap: 2rem;
+
+        h3 {
+          font-size: var(--fs-heading-large);
+          position: relative;
+
+          span {
+            top: -8rem;
+            left: -5rem;
+            position: absolute;
+            font-family: "high empathy";
+            font-size: 10rem;
+            color: var(--bg-accent-main);
+          }
+        }
+      }
+
+      .about__details-text {
+        p {
+          font-size: var(--fs-regular);
+          line-height: 1.4em;
+          max-width: 400px;
+        }
+      }
+    }
+
+    .about__details-picture {
+      img {
+        /* width: fit-content; */
+        width: 100%;
+        max-height: 90vh;
+        object-fit: cover;
+        border-radius: var(--border-radius-s);
+        filter: grayscale(100%);
+      }
     }
 
     @media (width > 830px) {
       --about-grid-direction: column;
 
-      grid-template-columns: 1fr 1fr;
+      padding-block-start: 0;
+      grid-template-columns: 1fr fit-content;
+      max-height: 100vh;
+      align-content: end;
+
+      @media (width > 1200px) {
+        padding-inline: 4rem;
+        gap: 1rem;
+      }
 
       .about__details-content {
-        .about__details-title {
-          font-size: 5rem;
+        flex-direction: column;
+
+        .about__details-text {
+          display: flex;
+          justify-content: end;
+          align-items: center;
+          height: 100%;
+        }
+      }
+
+      .about__details-title {
+        height: 100%;
+      }
+
+      .about__details-picture {
+        padding: 1rem;
+        max-width: fit-content;
+
+        img {
+          width: fit-content;
+          max-height: 90vh;
         }
       }
     }
@@ -1020,6 +1096,9 @@
   }
   .ls-xl {
     padding-block-start: var(--ls-xl);
+  }
+  .ls-xxl {
+    padding-block-start: var(--ls-xxl);
   }
 
   /* --Colors-- */

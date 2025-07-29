@@ -5,18 +5,18 @@ const observer = new IntersectionObserver(
 
     entries.forEach((entry) => {
       /* To check if an entry is currently intersecting/visible */
-      // if (entry.isIntersecting) {
-      //   console.log(entry);
-      //   entry.target.classList.add("fade");
-      // } else {
-      //   entry.target.classList.remove("fade");
-      // }
+      if (entry.isIntersecting) {
+        console.log(entry);
+        entry.target.classList.add("ani");
+      } else {
+        entry.target.classList.remove("ani");
+      }
     });
   },
-  { threshold: 0.5 }
+  { threshold: 1 }
 );
 
 /* For the observer to observe the .card class */
 const cardElements = document.querySelectorAll(".card");
-// cardElements.forEach((el) => observer.observe(el));
-observer.observe(cardElements[0]);
+cardElements.forEach((el) => observer.observe(el));
+// observer.observe(cardElements[0]);
