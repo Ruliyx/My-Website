@@ -1011,6 +1011,8 @@
     .connect__banner_title {
       /* background-color: blue; */
       padding-block-start: 2rem;
+      font-size: 10rem;
+      gap: 10rem;
 
       .connect-header {
         width: auto;
