@@ -717,36 +717,51 @@
     position: relative;
     gap: 5rem;
 
-    @media (width > 1200px) {
-      grid-template-columns: 2fr 3fr;
-    }
-
     .about-header > div {
       position: sticky;
       top: 5rem;
     }
 
+    .about-header-desc {
+      max-width: 650px;
+      font-size: clamp(1rem, 1vw + 0.5rem, 1.15rem);
+      line-height: 1.4em;
+    }
+
     .about-title {
       margin-block-start: 2rem;
       position: relative;
-      display: flex;
-      justify-content: center;
       padding-block-end: 5rem;
 
       .about-heading {
-        font-size: 4rem;
+        font-size: clamp(1.75rem, 2vw + 2rem, 3.5rem);
       }
 
       .about-punchline {
-        width: 400px;
+        min-width: 200px;
+        max-width: 400px;
         position: absolute;
         color: var(--bg-accent-main);
         font-family: "high empathy";
-        font-size: 5rem;
+        font-size: clamp(4rem, 3vw + 2.5rem, 5rem);
+        /* font-size: 5rem; */
         line-height: 0.4;
-        bottom: 10px;
+        left: 2rem;
+        bottom: 2rem;
+      }
+    }
+
+    @media (width > 1200px) {
+      grid-template-columns: 2fr 3fr;
+
+      .about-title {
+        display: flex;
+        justify-content: center;
+      }
+
+      .about-title .about-punchline {
         text-align: center;
-        /* background-color: chartreuse; */
+        left: auto;
       }
     }
   }
@@ -771,11 +786,6 @@
           flex-direction: row;
           align-items: center;
 
-          & h3 {
-            /* width: 300px; */
-            /* align-self: center; */
-            /* background-color: chartreuse; */
-          }
           & p {
             /* align-self: flex-end; */
             width: 400px;
@@ -788,22 +798,22 @@
       & svg {
         width: 50px;
         height: 50px;
-        border: 1px solid red;
-        border-radius: 10px;
-        /* background-color: chartreuse; */
+
+        animation: wiggle 0.1s infinite;
       }
 
       & h3 {
         font-weight: 300;
-        font-size: 1rem;
+        font-size: clamp(1rem, 1.5vw + 0.5rem, 1.25rem);
         text-transform: uppercase;
+        line-height: 1.6em;
         /* margin-block-end: var(--space-sm); */
       }
 
       & p {
         color: var(--tc-high-contrast2);
-        line-height: 1.2em;
-        font-size: var(--fs-regular);
+        line-height: 1.5em;
+        font-size: 1rem;
       }
 
       span {
@@ -855,8 +865,9 @@
 
       .about__details-text {
         p {
-          font-size: var(--fs-regular);
-          line-height: 1.4em;
+          /* font-size: var(--fs-regular); */
+          font-size: 1rem;
+          line-height: 1.5em;
           max-width: 400px;
         }
       }
@@ -1253,6 +1264,17 @@
     @keyframes scroll__text-reveal {
       to {
         background-size: 100% 100%;
+      }
+    }
+    @keyframes wiggle {
+      0% {
+        transform: rotate(90deg);
+      }
+      50% {
+        transform: rotate(45deg);
+      }
+      100% {
+        transform: rotate(170deg);
       }
     }
   }
