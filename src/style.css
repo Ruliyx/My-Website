@@ -442,6 +442,25 @@
     }
   }
 
+  .mobile__nav {
+    /* background-color: transparent; */
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 4rem;
+    height: 4rem;
+    cursor: pointer;
+    text-transform: none;
+
+    .btn-shapes {
+      background-color: green;
+      height: 2px;
+      width: 7px;
+    }
+  }
+
   .primary-navigation {
     ul {
       display: flex;
@@ -1313,6 +1332,16 @@
 }
 
 @layer utilities {
+  .visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
   .text-right {
     text-align: right;
   }
