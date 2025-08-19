@@ -442,22 +442,28 @@
     }
   }
 
-  .mobile__nav {
-    /* background-color: transparent; */
-    border: none;
-    display: flex;
+  [aria-controls="primary-nav"] {
+    display: none;
+    background-color: transparent;
+    z-index: 100;
+    border: 0;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 4rem;
-    height: 4rem;
-    cursor: pointer;
+    height: 2rem;
     text-transform: none;
+    position: relative;
+    aspect-ratio: 1/1;
+    gap: 0.5rem;
+    cursor: pointer;
 
-    .btn-shapes {
-      background-color: green;
+    .btn__shapes {
+      background-color: white;
+      line-height: 1.5rem;
       height: 2px;
-      width: 7px;
+      width: 2rem;
     }
   }
 
@@ -496,6 +502,48 @@
 
     .contact:hover {
       background-color: var(--bg-accent-dark);
+    }
+  }
+
+  /* Styles for mobile */
+  @media (width < 580px) {
+    .primary-navigation {
+      display: none;
+
+      position: fixed;
+      z-index: 10;
+      inset: 0 0 auto 0;
+      height: 100vh;
+      background-color: black;
+      padding: 2rem;
+      padding-block-start: 10rem;
+
+      ul {
+        line-height: 0.8em;
+        font-size: 9.5rem;
+        flex-direction: column;
+        text-align: unset;
+        align-items: start;
+        font-family: "humane";
+      }
+
+      .contact {
+        background-color: unset;
+
+        &:hover {
+          background-color: unset;
+        }
+      }
+    }
+
+    /* Show the mobile-nav icon*/
+    [aria-controls="primary-nav"] {
+      display: flex;
+    }
+
+    /* Show the mobile-nav */
+    [aria-expanded="true"] ~ .primary-navigation {
+      display: block;
     }
   }
 

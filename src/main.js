@@ -28,3 +28,19 @@ function raf(time) {
 }
 
 requestAnimationFrame(raf);
+
+// Mobile Nav
+const navToggle = document.querySelector("[aria-controls='primary-nav']");
+const primaryNav = document.getElementById("primary-nav");
+
+navToggle.addEventListener("click", () => {
+  const navOpen = navToggle.getAttribute("aria-expanded");
+
+  if (navOpen === "false") {
+    navToggle.setAttribute("aria-expanded", "true");
+  } else {
+    navToggle.setAttribute("aria-expanded", "false");
+  }
+
+  console.log(navOpen);
+});
