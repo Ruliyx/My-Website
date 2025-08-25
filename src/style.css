@@ -528,7 +528,11 @@
   /* Styles for mobile */
   @media (width < 580px) {
     .primary-navigation {
+      will-change: translate, display;
       display: none;
+      translate: 500px 0;
+      transition: translate 1s, display 1s;
+      transition-behavior: allow-discrete;
 
       position: fixed;
       z-index: 10;
@@ -537,18 +541,33 @@
       background-color: black;
       padding: 2rem;
       padding-block-start: 10rem;
+      font-family: "humane";
 
       ul {
         line-height: 0.8em;
-        font-size: 9.5rem;
+        font-size: 8rem;
         flex-direction: column;
         text-align: unset;
         align-items: start;
-        font-family: "humane";
+
+        & * {
+          display: block;
+        }
+
+        a {
+          padding-block-start: 0.2rem;
+
+          translate: 0 120px;
+          /* transition: translate 1s 1s; */
+        }
       }
 
       .contact {
         background-color: unset;
+
+        a {
+          padding: 0;
+        }
 
         &:hover {
           background-color: unset;
@@ -559,11 +578,29 @@
     /* Show the mobile-nav icon*/
     [aria-controls="primary-nav"] {
       display: flex;
+      position: fixed;
+      right: 1rem;
     }
 
     /* Show the mobile-nav */
     [aria-expanded="true"] ~ .primary-navigation {
       display: block;
+      translate: 0 0;
+
+      @starting-style {
+        translate: 500px 0;
+      }
+
+      ul {
+        & * {
+          display: block;
+        }
+      }
+
+      ul a {
+        translate: 0 0;
+        transition: translate 1s;
+      }
     }
   }
 
@@ -1277,9 +1314,8 @@
         scale: 95%;
       }
     }
-
-    .flip {
-      @media (hover: hover) {
+    @media (hover: hover), (width > 580px) {
+      .flip {
         --transition-duration: 0.25s;
         --timing-function: cubic-bezier(0.66, 0, 0.34, 1);
         overflow-y: clip;
