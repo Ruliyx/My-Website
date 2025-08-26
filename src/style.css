@@ -550,15 +550,17 @@
         text-align: unset;
         align-items: start;
 
-        & * {
-          display: block;
+        li {
+          overflow: hidden;
         }
 
         a {
           padding-block-start: 0.2rem;
 
+          display: block;
           translate: 0 120px;
-          /* transition: translate 1s 1s; */
+          transition: translate 800ms 300ms;
+          transition-behavior: allow-discrete;
         }
       }
 
@@ -592,14 +594,17 @@
       }
 
       ul {
-        & * {
-          display: block;
+        li {
+          overflow: hidden;
         }
-      }
 
-      ul a {
-        translate: 0 0;
-        transition: translate 1s;
+        a {
+          translate: 0 0;
+
+          @starting-style {
+            translate: 0 120px;
+          }
+        }
       }
     }
   }
@@ -1314,7 +1319,7 @@
         scale: 95%;
       }
     }
-    @media (hover: hover), (width > 580px) {
+    @media (hover: hover) {
       .flip {
         --transition-duration: 0.25s;
         --timing-function: cubic-bezier(0.66, 0, 0.34, 1);
@@ -1436,6 +1441,11 @@
 }
 
 @layer utilities {
+  .resizing * {
+    transition: none;
+    animation-play-state: paused;
+  }
+
   .visually-hidden {
     clip: rect(0 0 0 0);
     clip-path: inset(50%);

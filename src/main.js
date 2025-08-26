@@ -32,6 +32,13 @@ requestAnimationFrame(raf);
 // Mobile Nav
 const navToggle = document.querySelector("[aria-controls='primary-nav']");
 const primaryNav = document.getElementById("primary-nav");
+const navList = document.querySelectorAll(".nav-li");
+
+console.log(
+  navList.forEach((li) => {
+    console.log(li);
+  })
+);
 
 navToggle.addEventListener("click", () => {
   const navOpen = navToggle.getAttribute("aria-expanded");
@@ -42,3 +49,20 @@ navToggle.addEventListener("click", () => {
     navToggle.setAttribute("aria-expanded", "false");
   }
 });
+
+navList.forEach((li) => {
+  li.addEventListener("click", () => {
+    navToggle.setAttribute("aria-expanded", "false");
+  });
+});
+
+// Pause animation and transitions on resize
+const resizeObserver = new ResizeObserver(() => {
+  document.body.classList.add("resizing");
+
+  requestAnimationFrame(() => {
+    document.body.classList.remove("resizing");
+  });
+});
+
+resizeObserver.observe(document.body);
