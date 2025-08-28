@@ -34,12 +34,6 @@ const navToggle = document.querySelector("[aria-controls='primary-nav']");
 const primaryNav = document.getElementById("primary-nav");
 const navList = document.querySelectorAll(".nav-li");
 
-console.log(
-  navList.forEach((li) => {
-    console.log(li);
-  })
-);
-
 navToggle.addEventListener("click", () => {
   const navOpen = navToggle.getAttribute("aria-expanded");
 
