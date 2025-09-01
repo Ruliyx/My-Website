@@ -1,6 +1,14 @@
 const TestimonialBtns = document.querySelectorAll(".testimonials__btn");
 const TestimonialCards = document.querySelectorAll(".testimonials__carousal");
 
+// Scroll to top on refresh
+history.scrollRestoration = "manual";
+window.onbeforeunload = function () {
+  stopPropagation();
+  window.scrollTo(0, 0);
+  preventDefault();
+};
+
 TestimonialBtns.forEach((btn, btnIndex) => {
   btn.addEventListener("click", (clickedBtn) => {
     TestimonialCards.forEach((card, cardIndex) => {
@@ -15,6 +23,8 @@ TestimonialBtns.forEach((btn, btnIndex) => {
         card.classList.add("testimonial__hide");
       }
     });
+
+    //
   });
 });
 
@@ -48,6 +58,14 @@ navList.forEach((li) => {
   li.addEventListener("click", () => {
     navToggle.setAttribute("aria-expanded", "false");
   });
+});
+
+// Click on contact to go to bottom of page
+const contact = document.querySelector(".contact");
+
+contact.addEventListener("click", () => {
+  window.scrollTo(0, document.body.scrollHeight);
+  // preventDefault();
 });
 
 // Pause animation and transitions on resize

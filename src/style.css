@@ -437,12 +437,14 @@
     top: 0;
     right: 0;
     z-index: 20;
+    overflow-x: clip;
 
     height: var(--site-header-height);
     padding-block: var(--site-header-padding);
   }
 
   .site-header__inner {
+    /* position: relative; */
     display: flex;
     flex-wrap: wrap; /* makes the nav more responsive on smaller screens */
     gap: 0.5rem 1rem;
@@ -637,10 +639,39 @@
 
   .hero {
     /* background-color: aqua; */
-    height: 100svh;
+    height: 100vh;
     position: relative;
     display: grid;
     grid-template-rows: 1fr 2fr 1fr;
+    overflow: clip;
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: 10000;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 50vh;
+      background-color: var(--bg-accent-main);
+
+      transform: translateY(-0);
+      animation: load-out-top 1s cubic-bezier(0.32, 0, 0.67, 0) forwards;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: 10000;
+      bottom: 0;
+      left: 0;
+      width: 100vw;
+      height: 50vh;
+      background-color: var(--bg-accent-main);
+
+      transform: translateY(0);
+      animation: load-out-bottom 1s cubic-bezier(0.32, 0, 0.67, 0) forwards;
+    }
 
     .wrapper {
       height: 100%;
@@ -1271,7 +1302,7 @@
     bottom: 0;
     left: 0;
     z-index: 0;
-    height: 100svh;
+    height: 100vh;
 
     .footer__content {
       padding: 2rem;
@@ -1436,6 +1467,18 @@
         transform: translateY(0);
         /* z-index: 1; */
       }
+    }
+  }
+
+  @keyframes load-out-top {
+    to {
+      transform: translateY(-60vh);
+    }
+  }
+
+  @keyframes load-out-bottom {
+    to {
+      transform: translateY(60vh);
     }
   }
 }

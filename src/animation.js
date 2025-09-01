@@ -14,3 +14,8 @@ gsap.fromTo(
     duration: 1,
   }
 );
+
+// gsap.to(".hero::before", {
+//   y: 500,
+//   duration: 1,
+// });
